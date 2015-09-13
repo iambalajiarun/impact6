@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
    <style>
       html, body {
         height: 100%;
@@ -20,7 +19,6 @@
   Find Donation Location(s) around you -
   <button onclick="getLocation()"> Search ! </button>
 </p>
-=======
  <style>
   html, body {
     height: 100%;
@@ -38,19 +36,15 @@
     Hello World !
     Find Donation Location(s) around you -
   </p>
->>>>>>> bf1c777db7b6c4e6766650d96d13ae01a274acfa
 
   <br>
 
-<<<<<<< HEAD
 <p id="demo"></p>
-=======
   <p align = "center">
     <button onclick="getLocation()"> Search ! </button>
   </p>
 
   <p id="demo"></p>
->>>>>>> bf1c777db7b6c4e6766650d96d13ae01a274acfa
 
   <div id="map"></div>
 
@@ -65,7 +59,6 @@
         x.innerHTML = "Geolocation is not supported by this browser.";
       }
     }
-<<<<<<< HEAD
 }
 
 function initMap() {
@@ -105,7 +98,6 @@ function showPosition(position) {
               var one = ['Hello', element.Latitude, element.Longitude];
               markers.push(one);
             }            
-=======
     function initMap() {
       var myLatLng = {lat: -25.363, lng: 131.044};
       var map = new google.maps.Map(document.getElementById('map'), {
@@ -144,11 +136,9 @@ function showPosition(position) {
                 markers.push(one);
               }
             });
->>>>>>> bf1c777db7b6c4e6766650d96d13ae01a274acfa
           });
           addMarkers(markers);
         });
-<<<<<<< HEAD
         addMarkers(markers);
       });
     });    
@@ -159,31 +149,26 @@ function httpGetAsync(theUrl, callback)
 {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() { 
-=======
       });      
     }
     function httpGetAsync(theUrl, callback)
     {
       var xmlHttp = new XMLHttpRequest();
       xmlHttp.onreadystatechange = function() {
->>>>>>> bf1c777db7b6c4e6766650d96d13ae01a274acfa
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
           callback(xmlHttp.responseText);
       }
       xmlHttp.open("GET", theUrl, true); // true for asynchronous
       xmlHttp.send(null);
     }
-<<<<<<< HEAD
     xmlHttp.open("GET", theUrl, true); // true for asynchronous 
     xmlHttp.send(null);
 }
 
 function isEmpty(obj) {
     for(var prop in obj) {
-=======
     function isEmpty(obj) {
       for(var prop in obj) {
->>>>>>> bf1c777db7b6c4e6766650d96d13ae01a274acfa
         if(obj.hasOwnProperty(prop))
           return false;
       }
@@ -220,16 +205,13 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAptBFoq7wuvRcDlUUqqs_pCOD
 <p>
 <footer>
   <p align = "center">
-<<<<<<< HEAD
 Copyright 2015 . Impact6
 </p>
 </p>
 
 <br>
 
-=======
     Copyright 2015 . Impact6
   </p>
->>>>>>> bf1c777db7b6c4e6766650d96d13ae01a274acfa
 </footer>
 </html>
