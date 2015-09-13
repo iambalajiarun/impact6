@@ -141,7 +141,7 @@
       marker2.setMap(map);
       httpGetAsync('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + position.coords.latitude + ','+ position.coords.longitude, function(data){
       var zip_code = JSON.parse(data).results['0'].address_components['7'].long_name;
-      httpGetAsync('http://localhost:3000/find/'+zip_code+'/'+position.coords.latitude+'/'+position.coords.longitude, function(places){
+      httpGetAsync('http://www.Impact6.com/find/'+zip_code+'/'+position.coords.latitude+'/'+position.coords.longitude, function(places){
       var multiData = JSON.parse(places);
       multiData.forEach(function(singleData, upperIndex)
       {
