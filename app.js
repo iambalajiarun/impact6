@@ -25,7 +25,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //app.use(express.static(path.join(__dirname, 'public/views')));
 
-app.use('/', routes);
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/index.html');
+});
 app.use('/find', find);
 
 // catch 404 and forward to error handler
