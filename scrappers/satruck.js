@@ -11,12 +11,12 @@ module.exports = {
 			if(!error && response.statusCode == 200) {
 				var json = response.body;
 				var locations = json.RetVal.Locations;
-				for(location of locations) {
+				locations.forEach(function(location, index) {
 					retLocations.push({ 
 						"Latitude" : location.Latitude,
 						"Longitude": location.Longitude
 					});
-				}
+				})
 				callback(retLocations);
 			}
 		});

@@ -11,12 +11,12 @@ module.exports = {
 			var retLocations = [];
 			if(!error && response.statusCode == 200) {
 				var locations = response.body;
-				for(location of locations) {
+				locations.forEach(function(location, index) {
 					retLocations.push({ 
 						"Latitude" : location.lat,
 						"Longitude": location.lon
 					});
-				}
+				});
 				callback(retLocations);
 			}
 		});
