@@ -8,7 +8,7 @@
         padding: 0;
       }
       #map {
-        height: 100%;
+        height: 80%;
       }
     </style>
 </head>
@@ -66,12 +66,12 @@ function showPosition(position) {
     marker2.setMap(map);
     httpGetAsync('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + position.coords.latitude + ','+ position.coords.longitude, function(data){
       var zip_code = JSON.parse(data).results['0'].address_components['7'].long_name;
-      httpGetAsync('/find/'+zip_code+'/'+position.coords.latitude+'/'+position.coords.longitude, function(places){
+      httpGetAsync('http://impact6.co/find/'+zip_code+'/'+position.coords.latitude+'/'+position.coords.longitude, function(places){
         var multiData = JSON.parse(places);
         multiData.forEach(function(singleData, upperIndex)
         {
           singleData.forEach(function(element, index){
-            console.log(element);
+            //console.log(element);
             if(typeof element.Latitude !== 'undefined' && typeof element.Latitude !== 'undefined')
             {
               var one = ['Hello', element.Latitude, element.Longitude];
@@ -79,10 +79,10 @@ function showPosition(position) {
             }            
           });
         });
+        addMarkers(markers);
       });
     });    
-    console.log(markers);
-    addMarkers(markers);
+    // console.log(markers);
 }
 
 function httpGetAsync(theUrl, callback)
@@ -92,7 +92,7 @@ function httpGetAsync(theUrl, callback)
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
             callback(xmlHttp.responseText);
     }
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
     xmlHttp.send(null);
 }
 
