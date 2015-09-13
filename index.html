@@ -113,7 +113,7 @@ function addMarkers(markers)
       center: myLatLng
     });
     for( i = 0; i < markers.length; i++ ) {
-      var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+      var position = new google.maps.LatLng(markers[i].Latitude, markers[i].Longitude);
       bounds.extend(position);
       marker = new google.maps.Marker({
           position: position,
