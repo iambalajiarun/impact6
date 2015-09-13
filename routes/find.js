@@ -5,11 +5,7 @@ var goodwill = require('../scrappers/goodwill');
 var soles4souls = require('../scrappers/soles4souls')
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-	if(!req.query.zip || !req.query.lat || !req.query.lon) {
-		res.status(400).send("Missing parameters.");
-		return;
-	}
+router.get('/:zip/:lat/:lon', function(req, res, next) {
 
 	var responses = 0;
 	var list = [];
@@ -21,17 +17,17 @@ router.get('/', function(req, res, next) {
 		}
 	}
 
-	satruck.getLocations(req.query.zip, function(response) {
+	satruck.getLocations(req.params.zip, function(response) {
 		list.push (response);
 		done();
 	});
 
-	goodwill.getLocations(req.query.lat, req.query.lon, function(response) {
+	goodwill.getLocations(req.params.lat, req.params.lon, function(response) {
 		list.push (response);
 		done();
 	});
 
-	soles4souls.getLocations(req.query.lat, req.query.lon, function(response) {
+	soles4souls.getLocations(req.params.lat, req.params.lon, function(response) {
 		list.push (response);
 		done();
 	});
